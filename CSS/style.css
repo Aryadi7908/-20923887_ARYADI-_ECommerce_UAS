@@ -1,0 +1,969 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/*------------------------------------------------- Navbar -------------------------------------------------*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2722226e;
+  z-index: 1000;
+}
+
+.navbar-container {
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Logo */
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo a {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Menu tengah */
+.menu {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+/* Mega menu */
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #9d9d9a;
+  padding: 15px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  width: max-content;
+  min-width: 150px;
+  text-align: center;
+}
+
+.menu .produk-menu:hover .mega-menu {
+  display: block;
+}
+
+.mega-menu .column {
+  float: left;
+  width: 33.33%;
+}
+
+.mega-menu::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mega-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-menu ul li {
+  margin: 6px o;
+}
+
+.mega-menu ul li a {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  position: center;
+  padding: 5px 0;
+
+}
+
+/* Ikon kanan */
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.icons a {
+  color: #000;
+  text-decoration: none;
+}
+
+.icons a:hover {
+  color: #ffffff;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------- Body -------------------------------------------------*/
+
+/*-- Promo Hari Ini --*/
+.title-promo {
+  text-align: center;
+  margin: 0 0;
+  padding: 10px 0px;
+}
+
+.title-promo .section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.promo-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.promo-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.promo-slide {
+  position: relative;
+  flex: 0 0 100%;
+}
+
+.promo-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* konten di atas gambar */
+.promo-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.promo-content h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 5px rgb(0, 0, 0);
+}
+
+.promo-content p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 4px rgb(0, 0, 0);
+  color: white;
+}
+
+.promo-content .btn {
+  display: inline-block;
+  background: #0000007d;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Tombol navigasi Promo */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 24px;
+  padding: 20px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.prev {
+  left: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+.next {
+  right: 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.dots span {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .active {
+  background: #333;
+}
+
+/*-- Trend Fashion --*/
+.container {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(47, 45, 48, 0.9), rgba(75, 0, 130, 0));
+  text-align: left;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.discount {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/*-- Best Seller --*/
+.best-sellers {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.best-sellers h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.best-sellers p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.item {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #2722226e;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.item h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+.item p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* Tombol panah Best Seller */
+.prev-best-sell,
+.next-best-sell {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 24px;
+  padding: 20px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.prev-best-sell {
+  left: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+.next-best-sell {
+  right: 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.prev-best-sell:hover,
+.next-best-sell:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/*-- Deskripsi Toko --*/
+.fashion-description {
+  max-width: 1000px;
+  margin: 40px auto;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.fashion-description h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.fashion-description h3 {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.fashion-description p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.fashion-description a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.fashion-description a:hover {
+  text-decoration: underline;
+}
+
+.categories {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.categories a {
+  margin: 0 5px;
+  color: #444;
+  text-decoration: none;
+}
+
+.categories a:hover {
+  text-decoration: underline;
+}
+
+.container-kontak {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-info {
+  margin: 20px 0;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------- Footer -------------------------------------------------*/
+.footer {
+  background-color: #2722226e;
+  border-top: 1px solid #ffffff;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-column h4 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a,
+.footer-column p,
+.footer-column a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: left;
+}
+
+.footer-column ul li a:hover,
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------- Chat Box -------------------------------------------------*/
+.chat-box {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+}
+
+
+.chat-header {
+  background: #000000;
+  color: #ffff00;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
+.chat-body {
+  background: #ffff00;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------- Responsif -------------------------------------------------*/
+/* ================= Tablet (768px – 1024px) ================= */
+@media (max-width: 1024px) and (min-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 12px 20px;
+  }
+  .navbar-container {
+    width: 95%;
+    max-width: 100%;
+  }
+  .menu {
+    gap: 20px;
+  }
+  .menu a {
+    font-size: 13px;
+  }
+  .icons {
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  /* Promo carousel */
+  .promo-content h2 {
+    font-size: 26px;
+  }
+  .promo-content p {
+    font-size: 16px;
+  }
+  .promo-content .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Trend Fashion */
+  .cards {
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+  }
+  .card {
+    width: 220px;
+  }
+
+  /* Best Seller */
+  .item {
+    flex: 0 0 200px;
+  }
+  .carousel {
+    gap: 15px;
+  }
+
+  /* Deskripsi Toko */
+  .fashion-description {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  /* Kontak */
+  .container-kontak {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 0 20px;
+  }
+  .footer {
+    padding: 30px 20px;
+  }
+
+  /* Chat Box */
+  .chat-box {
+    width: 250px;
+    top: 40px;
+  }
+}
+
+/* ================= Mobile (max-width: 767px) ================= */
+@media (max-width: 767px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .menu a {
+    font-size: 13px;
+  }
+  .icons {
+    gap: 10px;
+    font-size: 16px;
+    align-self: flex-end;
+  }
+
+  /* Promo carousel */
+  .promo-content {
+    left: 5%;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  .promo-content h2 {
+    font-size: 20px;
+  }
+  .promo-content p {
+    font-size: 14px;
+  }
+  .promo-content .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .prev, .next {
+    font-size: 20px;
+    padding: 12px 8px;
+  }
+
+  /* Trend Fashion */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .card {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+
+  /* Best Seller */
+  .carousel {
+    gap: 10px;
+  }
+  .item {
+    flex: 0 0 160px;
+    padding: 8px;
+  }
+  .item h3 {
+    font-size: 14px;
+  }
+  .item p {
+    font-size: 12px;
+  }
+
+  /* Deskripsi Toko */
+  .fashion-description {
+    width: 95%;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  .fashion-description h2,
+  .fashion-description h3 {
+    font-size: 16px;
+  }
+
+  /* Kontak */
+  .container-kontak {
+    width: 95%;
+    padding: 15px;
+  }
+  input, textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+  .footer {
+    padding: 20px 15px;
+    text-align: center;
+  }
+  .footer-column h4,
+  .footer-column ul,
+  .footer-column p {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Chat Box */
+  .chat-box {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+  }
+}
+/* ================= Mobile Kecil (max-width: 375px) ================= */
+@media (max-width: 375px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 8px 10px;
+  }
+  .menu a {
+    font-size: 12px;
+  }
+  .icons {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  /* Promo carousel */
+  .promo-content h2 {
+    font-size: 18px;
+  }
+  .promo-content p {
+    font-size: 12px;
+  }
+  .promo-content .btn {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .prev, .next {
+    font-size: 18px;
+    padding: 10px 6px;
+  }
+
+  /* Trend Fashion */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+  }
+  .overlay {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  /* Best Seller */
+  .item {
+    flex: 0 0 140px;
+    padding: 6px;
+  }
+  .item h3 {
+    font-size: 12px;
+  }
+  .item p {
+    font-size: 11px;
+  }
+
+  /* Deskripsi Toko */
+  .fashion-description {
+    font-size: 13px;
+  }
+  .fashion-description h2,
+  .fashion-description h3 {
+    font-size: 14px;
+  }
+
+  /* Kontak */
+  .container-kontak {
+    padding: 12px;
+  }
+  input, textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+  button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 15px 10px;
+  }
+  .footer-container {
+    gap: 10px;
+  }
+  .footer-column h4 {
+    font-size: 13px;
+  }
+  .footer-column ul li a {
+    font-size: 12px;
+  }
+
+  /* Chat Box */
+  .chat-box {
+    width: 95%;
+    font-size: 13px;
+    top: 15px;
+  }
+  .chat-header {
+    font-size: 12px;
+  }
+  .chat-body {
+    font-size: 13px;
+  }
+}

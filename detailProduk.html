@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk GROWONE</title>
+  <link rel="stylesheet" href="CSS/detailProduk.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+</head>
+
+<body>
+  <!-- ------------------------------------------------- Navbar ------------------------------------------------- -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <a href="index.html">GROWONE</a>
+      </div>
+
+      <!-- Navabar -->
+      <div class="menu">
+        <a href="index.html">BERANDA</a>
+        <div class="produk-menu">
+          <a href="produk.html">PRODUK</a>
+          <div class="mega-menu">
+            <!-- Kategori Produk -->
+            <div class="column">
+              <ul>
+                <li><a href="katalogtShirt.html">T-SHIRT</a></li>
+                <li><a href="katalogshirt.html">SHIRT</a></li>
+                <li><a href="katalogsweater.html">SWEATER</a></li>
+                <li><a href="katalogpoloshirt.html">POLO SHIRT</a></li>
+                <li><a href="katalogjacket.html">JACKET</a></li>
+                <li><a href="katalogaksesoris.html">ACCESSORIES</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="kontak.html">KONTAK</a>
+      </div>
+      <!-- Icon Keranjang -->
+      <div class="icons">
+        <a href="cart.html" id="keranjang"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!-- ---------------------------------------------------------------------------------------------------------- -->
+  <!-- ------------------------------------------------- Beranda ------------------------------------------------- -->
+  <div class="product-container">
+    <div class="product-images">
+      <img src="images/best-seller1.png" alt="Produk Utama">
+    </div>
+    <div class="product-info">
+      <h2></h2>
+      <div class="price"></div>
+      <p></p>
+  
+      <div class="quantity">
+        <button class="minus">-</button>
+        <input type="number" id="qty" value="1" min="1">
+        <button class="plus">+</button>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn-cart" id="add-to-cart">Masukkan Keranjang</button>
+        <button class="btn-buy" onclick="window.location.href='checkout.html'">Beli Sekarang</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------------------------------------------------------------------- -->
+  <!-- ------------------------------------------------- Footer ------------------------------------------------- -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Kolom 1 -->
+      <div class="footer-column">
+        <h4>LAYANAN</h4>
+        <ul>
+          <li><a href="#" id="informasi">Informasi</a></li>
+          <li><a href="#" id="store-locator">Store Locator</a></li>
+          <li><a href="#" id="pembelian-grosir">Pembelian Grosir</a></li>
+          <li><a href="#" id="servis-penjahitan">Servis Penjahitan</a></li>
+          <li><a href="#" id="gift-delivery">Gift Delivery</a></li>
+          <li><a href="#" id="live-station">Live Station</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 2 -->
+      <div class="footer-column">
+        <h4>BANTUAN</h4>
+        <ul>
+          <li><a href="#" id="faq">FAQ</a></li>
+          <li><a href="#" id="panduan-belanja">Panduan Belanja</a></li>
+          <li><a href="#" id="kebijakan-retur">Kebijakan Retur</a></li>
+          <li><a href="#" id="kebijakan-privasi">Kebijakan Privasi</a></li>
+          <li><a href="kontak.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3 -->
+      <div class="footer-column">
+        <h4>KONTAK KAMI</h4>
+        <p>Email: <a href="mailto:aryadi7908@gmail.com">aryadi7908@gmail.com</a></p>
+        <p>Telepon: <a href="tel:+6289696478268">+62 89696478268</a></p>
+        <p>Alamat: Kecamatan Cileunyi, Jl. Sadang No. 14, Kabupaten Bandung</p>
+      </div>
+
+      <!-- Kolom 4 -->
+      <div class="footer-column">
+        <h4>IKUTI KAMI</h4>
+        <div class="social-icons">
+          <a href="#" id="facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#" id="twitter"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+          <a href="#" id="instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              alt="Instagram"></a>
+          <a href="#" id="youtube"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+        </div>
+      </div>
+  </footer>
+  <!-- ---------------------------------------------------------------------------------------------------------- -->
+  <!-- ------------------------------------------------- Chat Box ------------------------------------------------- -->
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <span>⚠ Warning !!! ⚠</span>
+      <button id="closeChat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <p>Oops! Fitur ini masih dalam tahap pengembangan.</p>
+    </div>
+  </div>
+  <!-- ---------------------------------------------------------------------------------------------------------- -->
+</body>
+<script src="JS/detailProduk.js"></script>
+
+</html>
